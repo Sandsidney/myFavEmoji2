@@ -9,28 +9,30 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+//add the uitable data source and the uitable view delegate.
     
     
     @IBOutlet weak var coolTableView: UITableView!
     
+    var emoji = ["😍 Smiling face with heart-shaped eyes", "😂 Face with tears of joy", "🤓 Nerd face", "😜 Crazy funny face", "😇 Angel with halo", "😋 Face with tougue out", "😴 Sleepy face"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         coolTableView.dataSource=self //used to define the table
-        coolTableView.delegate=self   //and contents
+        coolTableView.delegate=self   //used to define the content
         
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return emoji.count //this thinks about how many var is available and only puts that many rows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //this is asking in order what do you want in the cells
+        print(indexPath.row)    //arrays and index paths are both zero based
         let cell = UITableViewCell ()
-        cell.textLabel?.text = "hello🤓"
+        cell.textLabel?.text = emoji [indexPath.row]
         return cell
         
     }
