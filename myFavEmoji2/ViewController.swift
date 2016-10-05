@@ -14,7 +14,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var coolTableView: UITableView!
     
-    var emoji = ["😍 Smiling face with heart-shaped eyes", "😂 Face with tears of joy", "🤓 Nerd face", "😜 Crazy funny face", "😇 Angel with halo", "😋 Face with tougue out", "😴 Sleepy face"]
+    var emoji = ["😍 Smiling face with heart-shaped eyes", "😂 Face with tears of joy", "🤓 Nerd face", "😜 Face with stuck-out tongue and winking eye", "😇 Smiling face with halo", "😋 Face savouring delicious food", "😴 Sleeping face"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +35,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = emoji [indexPath.row]
         return cell
         
+    }
+    // DON"T SELECT DESELECT! MAKE SURE IT IS THIS
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "moveSegue", sender: "😍")
     }
     
     override func didReceiveMemoryWarning() {
