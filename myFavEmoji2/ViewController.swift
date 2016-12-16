@@ -36,7 +36,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
         
     }
-    // DON"T SELECT DESELECT! MAKE SURE IT IS THIS
+    // DON"T SELECT DESELECT! MAKE SURE IT IS THE DIDSELECT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "moveSegue", sender: "😍")
     }
